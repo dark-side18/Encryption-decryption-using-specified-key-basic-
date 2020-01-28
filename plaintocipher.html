@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+    body{
+        background-color: #444444;
+    }
+</style>
+<div align="center">
+<head>
+<h2 style="font: Times New Roman; font-size: 30px; font-style: oblique; color: #D3D3D3; border-bottom: solid;" >Encipher-Decipher</h2>
+</head>
+<body>
+<textarea id="plain" placeholder="Plain Text" style="margin: 20px; border-radius: 10px; height: 250px; font: Times New Roman; background-color: #D3D3D3; font-style: oblique; border-width: 2px; border: solid;" row="1000" cols="100"></textarea>
+<br/>
+<button type="button" style="font: Times New Roman; font-size: 15px; border-radius: 5px; background-color: #D3D3D3; font-style: oblique; display: inline-block;border-width: 1px; border: solid; margin: 2px; padding: 5px; " onclick="plaintocipher()">Encipher</button>
+<button type="button" style="font: Times New Roman; font-size: 15px; border-radius: 5px; background-color: #D3D3D3; font-style: oblique; display: inline-block;border-width: 1px; border: solid; margin: 2px; padding: 5px;" onclick="ciphertoplain()">Decipher</button>
+<br/>
+<textarea id="cipher" placeholder="Cipher Text" style="margin: 20px; height: 250px; border-radius: 10px; font: Times New Roman; background-color: #D3D3D3;font-style: oblique;border-width: 2px; border: solid;" row="1000" cols="100"></textarea>
+</div>
+<script type="text/javascript">
+	function plaintocipher() {
+    var input = document.getElementById("plain").value;
+    if(input=="")
+        alert("Text not available for Encryption!!");
+    var txt="";
+    var cnt=0;
+    for(var i in input)
+    {
+        var y=input.charCodeAt(cnt++);
+        if(y>=97&&y<=122)
+        {
+            txt+=(String.fromCharCode(122+97-y));
+        }
+        else if(y>=65&&y<=90)
+        {
+            txt+=(String.fromCharCode(90+65-y));
+        }
+        else
+        {
+            txt+=input[i];
+        }
+    }
+    document.getElementById("cipher").value=txt;
+}
+
+    function ciphertoplain(){
+        var input = document.getElementById("cipher").value;
+        if(input=="")
+        alert("Text not available for Decryption!!");
+    var txt="";
+    var cnt=0;
+    for(var i in input)
+    {
+        var y=input.charCodeAt(cnt++);
+        if(y>=97&&y<=122)
+        {
+            txt+=(String.fromCharCode(122+97-y));
+        }
+        else if(y>=65&&y<=90)
+        {
+            txt+=(String.fromCharCode(90+65-y));
+        }
+        else
+        {
+            txt+=input[i];
+        }
+    }
+    document.getElementById("plain").value=txt;
+    }
+</script>
+
+
+</body>
+</html> 
