@@ -18,12 +18,14 @@
 <textarea id="cipher" placeholder="Cipher Text" style="margin: 20px; height: 250px; border-radius: 10px; font: Times New Roman; background-color: #D3D3D3;font-style: oblique;border-width: 2px; border: solid;" row="1000" cols="100"></textarea>
 </div>
 <script type="text/javascript">
+    //function to convert plain text to cipher text!!
 	function plaintocipher() {
     var input = document.getElementById("plain").value;
     if(input=="")
         alert("Text not available for Encryption!!");
     var txt="";
     var cnt=0;
+    //Use ASCII value manipulation for getting the desired plain text
     for(var i in input)
     {
         var y=input.charCodeAt(cnt++);
@@ -42,13 +44,14 @@
     }
     document.getElementById("cipher").value=txt;
 }
-
+    //function to convert cipher text to plain text!!
     function ciphertoplain(){
         var input = document.getElementById("cipher").value;
         if(input=="")
         alert("Text not available for Decryption!!");
     var txt="";
     var cnt=0;
+    //Use ASCII value manipulation for getting the desired plain text
     for(var i in input)
     {
         var y=input.charCodeAt(cnt++);
