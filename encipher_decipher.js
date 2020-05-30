@@ -1,3 +1,6 @@
+//plaintocipher()=>function to convert plain text to cipher text!!
+//ciphertoplain()=>function to convert cipher text to plain text!!
+//uses ASCII value manipulation to get the desired result
 <script type="text/javascript">
 	function plaintocipher() {
     var input = document.getElementById("plain").value;
